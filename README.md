@@ -71,3 +71,7 @@ Now you are ready for OSCON!
 - This Repository
 - [How To Learn Rust](https://github.com/CleanCut/rusty_racing/blob/master/HowToLearnRust.md)
 - [The Rust Standard Library](https://doc.rust-lang.org/std/)
+
+### Attribution
+
+- 2D Race Cars images are licensed under Public Domain and are [available on itch.io](https://looneybits.itch.io/2d-race-cars)
