@@ -1,6 +1,6 @@
 # Rusty Racing: A Crash Course in Rust (for OSCON 2020)
 
-If you would like to support this project, please [sponsor](https://github.com/sponsors/CleanCut) me. 💖
+If you would like to support this project, please star this repository and [sponsor](https://github.com/sponsors/CleanCut) me. 💖
 
 # Before the training...
 
