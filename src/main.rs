@@ -1,5 +1,6 @@
-use rusty_engine::gfx::{Color, GameEvent, ShapeStyle, Sprite, Window};
+use rusty_engine::gfx::{ShapeStyle, Sprite};
 use rusty_engine::glm::{self, Vec2};
+use rusty_engine::prelude::{Color, GameEvent, Window};
 
 fn main() {
     let mut window = Window::new(None, "Rusty Racing");
@@ -18,6 +19,16 @@ fn main() {
         ShapeStyle::Line,
     ));
     // Middle left: blue line box
+    sprites.push(Sprite::new_rectangle(
+        &window,
+        Vec2::new(-0.6, 0.6),
+        0.0,
+        1. / 16.,
+        0.75,
+        0.5,
+        Color::new(0.4, 0.6, 1.0),
+        ShapeStyle::Line,
+    ));
     sprites.push(Sprite::new_rectangle(
         &window,
         Vec2::new(-0.6, 0.6),
@@ -105,6 +116,14 @@ fn main() {
     sprites.push(Sprite::new_image(
         &window,
         Vec2::new(0.0, 0.6),
+        0.0,
+        1. / 16.,
+        None,
+        "resources/car_orange.png",
+    ));
+    sprites.push(Sprite::new_image(
+        &window,
+        Vec2::new(0.0, 0.6),
         0.,
         1. / 16.,
         None,
@@ -125,13 +144,13 @@ fn main() {
         window.drawfinish();
 
         for sprite in sprites.iter_mut() {
-            if sprite.direction >= final_direction {
-                sprite.direction = final_direction;
+            if sprite.transform.direction >= final_direction {
+                sprite.transform.direction = final_direction;
                 continue;
             }
-            sprite.direction += 0.03;
-            sprite.scale += 0.002;
-            sprite.pos += glm::vec2(0., -0.002);
+            sprite.transform.direction += 0.03;
+            sprite.transform.scale += 0.002;
+            sprite.transform.pos += glm::vec2(0., -0.002);
         }
         std::thread::sleep(std::time::Duration::from_millis(16));
     }
