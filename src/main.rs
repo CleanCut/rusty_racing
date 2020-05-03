@@ -100,14 +100,12 @@ fn main() {
         ShapeStyle::Line,
     ));
     // Bottom middle: yellow circle
-    sprites.push(Sprite::new_circle(
+    sprites.push(Sprite::smooth_circle(
         &window,
         Vec2::new(0.0, 0.0),
         0.0,
-        1.0 / 16.,
-        0.20,
+        1.0 / 100.,
         Color::new(1.0, 1.0, 0.2),
-        ShapeStyle::Fill,
     ));
 
     // Top middle:
